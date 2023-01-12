@@ -1,6 +1,7 @@
 import { Command } from "@toastify/structures/SlashCommand";
 import {
   ActionRowBuilder,
+  APIApplicationCommandOptionChoice,
   ComponentType,
   EmbedBuilder,
   SlashCommandBuilder,
@@ -11,6 +12,16 @@ import {
 import Parser from "rss-parser";
 const parser = new Parser();
 
+const options: APIApplicationCommandOptionChoice<string>[] = [
+  { name: "MrBeast", value: "UCX6OQ3DkcsbYNE6H8uQQuVA" },
+  { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" },
+  { name: "JackSucksAtLife", value: "UCewMTclBJZPaNEfbf-qYMGA" },
+  { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" },
+  { name: "JackSucksAtGeography", value: "UCd15dSPPT-EhTXekA7_UNAQ" },
+  { name: "Jack Massey Welsh", value: "UCyktGLVQchOpvKgL7GShDWA" },
+  { name: "Tom Scott", value: "UCBa659QWEk1AI4Tg--mrJ2A" },
+];
+
 export default new Command({
   data: new SlashCommandBuilder()
     .setName("play")
@@ -19,22 +30,16 @@ export default new Command({
       option
         .setName("channel")
         .setDescription("The channel to guess the thumbnails of.")
-        .addChoices(
-          { name: "MrBeast", value: "UCX6OQ3DkcsbYNE6H8uQQuVA" },
-          { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" },
-          { name: "JackSucksAtLife", value: "UCewMTclBJZPaNEfbf-qYMGA" },
-          { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" },
-          { name: "JackSucksAtGeography", value: "UCd15dSPPT-EhTXekA7_UNAQ" },
-          { name: "Jack Massey Welsh", value: "UCyktGLVQchOpvKgL7GShDWA" },
-          { name: "Tom Scott", value: "UCBa659QWEk1AI4Tg--mrJ2A" }
-        )
-        .setRequired(true)
+        .addChoices(...options)
+        .setRequired(false)
     ),
   run: async ({ interaction }) => {
+    const channel =
+      interaction.options.getString("channel") ||
+      options[Math.floor(Math.random() * options.length)].value;
+
     const { items } = await parser.parseURL(
-      `https://www.youtube.com/feeds/videos.xml?channel_id=${interaction.options.getString(
-        "channel"
-      )}`
+      `https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`
     );
     const videos = items.sort(() => Math.random() - Math.random()).slice(0, 5);
     const video = videos[Math.floor(Math.random() * videos.length)];
