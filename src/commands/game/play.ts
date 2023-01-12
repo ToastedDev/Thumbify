@@ -24,6 +24,8 @@ export default new Command({
           { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" },
           { name: "JackSucksAtLife", value: "UCewMTclBJZPaNEfbf-qYMGA" },
           { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" },
+          { name: "JackSucksAtGeography", value: "UCd15dSPPT-EhTXekA7_UNAQ" },
+          { name: "Jack Massey Welsh", value: "UCyktGLVQchOpvKgL7GShDWA" },
           { name: "Tom Scott", value: "UCBa659QWEk1AI4Tg--mrJ2A" }
         )
         .setRequired(true)
