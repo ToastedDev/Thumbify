@@ -21,7 +21,9 @@ export default new Command({
         .setDescription("The channel to guess the thumbnails of.")
         .addChoices(
           { name: "MrBeast", value: "UCX6OQ3DkcsbYNE6H8uQQuVA" },
-          { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" }
+          { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" },
+          { name: "JackSucksAtLife", value: "UCewMTclBJZPaNEfbf-qYMGA" },
+          { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" }
         )
         .setRequired(true)
     ),
