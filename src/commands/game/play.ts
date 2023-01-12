@@ -80,7 +80,11 @@ export default new Command({
           embeds: [
             new EmbedBuilder()
               .setTitle("You chose the wrong answer!")
-              .setDescription(`It was "${video.title}".`)
+              .setDescription(
+                `It was "[${video.title}](https://youtu.be/${video.id.slice(
+                  9
+                )})".`
+              )
               .setColor("Red"),
           ],
           components: [],
@@ -92,7 +96,11 @@ export default new Command({
           embeds: [
             new EmbedBuilder()
               .setTitle("You chose the right answer!")
-              .setDescription(`It was "${video.title}".`)
+              .setDescription(
+                `It was "[${video.title}](https://youtu.be/${video.id.slice(
+                  9
+                )})".`
+              )
               .setColor("Green"),
           ],
           components: [],
@@ -108,7 +116,11 @@ export default new Command({
               embeds: [
                 new EmbedBuilder()
                   .setTitle("You ran out of time!")
-                  .setDescription(`It was "${video.title}".`)
+                  .setDescription(
+                    `It was "[${video.title}](https://youtu.be/${video.id.slice(
+                      9
+                    )})".`
+                  )
                   .setColor("Red"),
               ],
               components: [],
