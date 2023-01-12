@@ -23,7 +23,8 @@ export default new Command({
           { name: "MrBeast", value: "UCX6OQ3DkcsbYNE6H8uQQuVA" },
           { name: "PewDiePie", value: "UC-lHJZR3Gqxm24_Vd_AJ5Yw" },
           { name: "JackSucksAtLife", value: "UCewMTclBJZPaNEfbf-qYMGA" },
-          { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" }
+          { name: "JackSucksAtStuff", value: "UCxLIJccyaRQDeyu6RzUsPuw" },
+          { name: "Tom Scott", value: "UCBa659QWEk1AI4Tg--mrJ2A" }
         )
         .setRequired(true)
     ),
