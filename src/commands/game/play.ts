@@ -38,7 +38,7 @@ export default new Command({
       interaction.options.getString("channel") ||
       options[Math.floor(Math.random() * options.length)].value;
 
-    const { items } = await parser.parseURL(
+    const { items, title } = await parser.parseURL(
       `https://www.youtube.com/feeds/videos.xml?channel_id=${channel}`
     );
     const videos = items.sort(() => Math.random() - Math.random()).slice(0, 5);
@@ -51,7 +51,11 @@ export default new Command({
           .setImage(
             `https://img.youtube.com/vi/${video.id.slice(9)}/mqdefault.jpg`
           )
-          .setColor("Blurple"),
+          .setColor("Blurple")
+          .setFooter({
+            text: title,
+            iconURL: `https://www.banner.yt/${channel}/avatar`,
+          }),
       ],
       components: [
         new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(
@@ -93,7 +97,11 @@ export default new Command({
                   9
                 )})".`
               )
-              .setColor("Red"),
+              .setColor("Red")
+              .setFooter({
+                text: title,
+                iconURL: `https://www.banner.yt/${channel}/avatar`,
+              }),
           ],
           components: [],
         });
@@ -109,7 +117,11 @@ export default new Command({
                   9
                 )})".`
               )
-              .setColor("Green"),
+              .setColor("Green")
+              .setFooter({
+                text: title,
+                iconURL: `https://www.banner.yt/${channel}/avatar`,
+              }),
           ],
           components: [],
         });
@@ -129,7 +141,11 @@ export default new Command({
                       9
                     )})".`
                   )
-                  .setColor("Red"),
+                  .setColor("Red")
+                  .setFooter({
+                    text: title,
+                    iconURL: `https://www.banner.yt/${channel}/avatar`,
+                  }),
               ],
               components: [],
             });
