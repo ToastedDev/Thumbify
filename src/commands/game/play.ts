@@ -20,6 +20,8 @@ const options: APIApplicationCommandOptionChoice<string>[] = [
   { name: "JackSucksAtGeography", value: "UCd15dSPPT-EhTXekA7_UNAQ" },
   { name: "Jack Massey Welsh", value: "UCyktGLVQchOpvKgL7GShDWA" },
   { name: "Tom Scott", value: "UCBa659QWEk1AI4Tg--mrJ2A" },
+  { name: "Timeworks", value: "UCv5mo0iXze8aKFjvdp51Fjg" },
+  { name: "Dhar Mann", value: "UC_hK9fOxyy_TM8FJGXIyG8Q" },
 ];
 
 export default new Command({
